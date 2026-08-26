@@ -15,6 +15,9 @@ import {
 } from '@/lib/upload/services/tus-file-operations';
 import { TusMultipartManager } from '@/lib/upload/services/tus-multipart-manager';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // Initialize directories
 ensureDir(TUS_SERVER_CONFIG.stagingDir);
 ensureDir(TUS_SERVER_CONFIG.mountPath);

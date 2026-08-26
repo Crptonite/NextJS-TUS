@@ -44,3 +44,6 @@ next-env.d.ts
 /uploads/
 /staging/
 *.safetensors
+
+# Local Netlify folder
+.netlify

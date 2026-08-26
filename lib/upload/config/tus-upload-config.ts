@@ -1,3 +1,6 @@
+import os from 'os';
+import path from 'path';
+
 // TUS Upload Client Configuration
 export const TUS_CLIENT_CONFIG = {
   maxFileSelection: 60,
@@ -12,8 +15,8 @@ export const TUS_CLIENT_CONFIG = {
 
 // TUS Upload Server Configuration
 export const TUS_SERVER_CONFIG = {
-  stagingDir: process.env.STAGING_DIR || './staging',
-  mountPath: process.env.MOUNT_PATH || './uploads',
+  stagingDir: process.env.STAGING_DIR || path.join(os.tmpdir(), 'staging'),
+  mountPath: process.env.MOUNT_PATH || path.join(os.tmpdir(), 'uploads'),
   filenameSanitizeRegex: /[^a-zA-Z0-9._-]/g,
   maxFileSize: 20 * 1024 * 1024 * 1024, // 20GB
 } as const;
